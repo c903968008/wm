@@ -15,7 +15,7 @@ class UserRepository
     //查找 手机号、密码
     public function queryWithTelAndPswd($telephone,$password)
     {
-        return User::query()->where('telephone',$telephone)->where('password',$password)->get();
+        return User::query()->where('telephone',$telephone)->where('password',$password)->first();
     }
 
     //创建用户

@@ -15,8 +15,15 @@ class ShopRepository
 {
 
     //查找所有商铺信息
-    public function qureyAll(){
+    public function getAll()
+    {
         return Shop::all();
+    }
+
+    //通过id查找
+    public function getById($id)
+    {
+        return Shop::query()->find($id);
     }
 
 }

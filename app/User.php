@@ -33,7 +33,7 @@ class User extends Authenticatable
         return $this->belongsToMany(Shop::class);
     }
 
-    public function collecte()
+    public function collect()
     {
         return $this->belongsToMany(Shop::class);
     }
