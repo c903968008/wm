@@ -44,7 +44,7 @@ class CollectionController extends Controller
         $user_id = $request->get('user_id');
         $shop_id = $request->get('shop_id');
         $ncollect = $this->collectionRepository->ncollect($user_id,$shop_id);
-        if($ncollect) {
+        if($ncollect == 'success') {
             return $this->success($ncollect,"删除收藏操作成功");
         } else {
             return $this->fail($ncollect,"删除收藏操作失败");

@@ -9,7 +9,15 @@
 namespace App\Repositories;
 
 
+use App\Good;
+
 class GoodRepository
 {
+
+    //通过shop_id查找
+    public function getByShopId($shop_id)
+    {
+        return Good::query()->where('shop_id',$shop_id)->get();
+    }
 
 }

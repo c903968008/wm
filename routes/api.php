@@ -28,3 +28,6 @@ Route::post('/getShopById','ShopController@getById');
 Route::post('/collect','CollectionController@collect');
 Route::post('/isCollect','CollectionController@isCollect');
 Route::post('/ncollect','CollectionController@ncollect');
+
+//good接口
+Route::post('/getGood','GoodController@getByShopId');

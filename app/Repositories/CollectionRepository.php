@@ -32,6 +32,12 @@ class CollectionRepository
     //删除收藏
     public function ncollect($user_id,$shop_id)
     {
-        return Collection::query()->where(['user_id'=>$user_id,'shop_id'=>$shop_id])->delete();
+        $collect = Collection::query()->where(['user_id'=>$user_id,'shop_id'=>$shop_id])->first();
+        if($collect->delete()){
+            return 'success';
+        } else{
+            return 'error';
+        }
+
     }
 }
