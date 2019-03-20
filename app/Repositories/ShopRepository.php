@@ -26,4 +26,6 @@ class ShopRepository
         return Shop::query()->find($id);
     }
 
+
+
 }

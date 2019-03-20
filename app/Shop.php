@@ -17,6 +17,7 @@ class Shop extends Model
         return $this->belongsToMany(Tab::class);
     }
 
+
     public function foot()
     {
         return $this->belongsToMany(User::class);
@@ -26,6 +27,11 @@ class Shop extends Model
     {
         return $this->belongsToMany(User::class);
     }
+
+//    public function evaluations()
+//    {
+//        return $this->belongsToMany(Evaluation::class);
+//    }
 
 
 }

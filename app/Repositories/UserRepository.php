@@ -33,4 +33,10 @@ class UserRepository
         return User::query()->where('telephone',$telephone)->first();
     }
 
+    //通过id查找
+    public function getById($id)
+    {
+        return User::query()->find($id);
+    }
+
 }

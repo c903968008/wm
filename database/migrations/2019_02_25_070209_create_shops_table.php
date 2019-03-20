@@ -22,7 +22,7 @@ class CreateShopsTable extends Migration
             $table->string('logo')->default(public_path('image/logo.jpg'));
             $table->string('telephone');
             $table->string('remark');
-            $table->float('discount')->unsigned()->default(0);
+            $table->string('discount');
             $table->integer('eva')->unsigned()->default(0);
             $table->integer('goodEva')->unsigned()->default(0);
             $table->integer('badEva')->unsigned()->default(0);

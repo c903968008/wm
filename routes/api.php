@@ -31,3 +31,8 @@ Route::post('/ncollect','CollectionController@ncollect');
 
 //good接口
 Route::post('/getGood','GoodController@getByShopId');
+
+//evaluation接口
+Route::post('/getEvaluationWithUser','EvaluationController@getByShopId');
+
+Route::get('/test','Controller@json2');
