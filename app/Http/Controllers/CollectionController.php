@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Repositories\CollectionRepository;
+use App\User;
 use Illuminate\Http\Request;
 
 class CollectionController extends Controller
@@ -15,6 +16,7 @@ class CollectionController extends Controller
         $this->collectionRepository = $collectionRepository;
     }
 
+    //收藏店铺
     public function collect(Request $request)
     {
         $user_id = $request->get('user_id');
@@ -27,6 +29,7 @@ class CollectionController extends Controller
         }
     }
 
+    //判断是否已收藏
     public function isCollect(Request $request)
     {
         $user_id = $request->get('user_id');
@@ -39,6 +42,7 @@ class CollectionController extends Controller
         }
     }
 
+    //取消收藏
     public function ncollect(Request $request)
     {
         $user_id = $request->get('user_id');
@@ -49,5 +53,18 @@ class CollectionController extends Controller
         } else {
             return $this->fail($ncollect,"删除收藏操作失败");
         }
+    }
+
+    //通过user_id查找
+    public function getByUserId(Request $request)
+    {
+        $user_id = $request->get('user_id');
+        $collection = $this->collectionRepository->getByUserId($user_id);
+        if(count($collection)){
+            return $this->success($collection,'查找收藏成功');
+        } else{
+            return $this->fail($collection,'查找收藏失败');
+        }
+
     }
 }

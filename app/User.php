@@ -35,7 +35,7 @@ class User extends Authenticatable
 
     public function collect()
     {
-        return $this->belongsToMany(Shop::class);
+        return $this->belongsToMany(Shop::class, 'collections','user_id','shop_id');
     }
 
     public function coupons()

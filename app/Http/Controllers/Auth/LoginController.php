@@ -47,10 +47,10 @@ class LoginController extends Controller
         $tel = $request->get('telephone');
         $pswd = $request->get('password');
         $user = $this->userRepository->queryWithTelAndPswd($tel,$pswd);
-        if($user->isEmpty()){
-            return $this->fail(null,"登录失败");
-        } else {
+        if($user){
             return $this->success($user,"登录成功");
+        } else {
+            return $this->fail($user,"登录失败");
         }
     }
 }

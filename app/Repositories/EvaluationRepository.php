@@ -18,7 +18,6 @@ class EvaluationRepository
     //通过商铺id查找评价
     public function getEvaUserByShopId($shop_id)
     {
-//        return Evaluation::query()->where('shop_id',$shop_id)->get();
         return Evaluation::with('user')->where('shop_id',$shop_id)->get();
     }
 

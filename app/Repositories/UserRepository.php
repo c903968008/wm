@@ -39,4 +39,31 @@ class UserRepository
         return User::query()->find($id);
     }
 
+    //修改头像
+    public function editAvatarById($id, $avatar)
+    {
+        return User::query()->where('id',$id)->update([
+            'avatar' => $avatar
+        ]);
+    }
+
+    //修改用户名
+    public function editNameById($id, $name)
+    {
+        return User::query()->where('id',$id)->update([
+            'name' => $name
+        ]);
+    }
+
+    //修改密码
+    public function editPasswordById($id, $password)
+    {
+        return User::query()->where('id',$id)->update([
+            'password' => $password
+        ]);
+    }
+
+
+
+
 }

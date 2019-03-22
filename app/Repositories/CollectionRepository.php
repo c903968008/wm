@@ -10,7 +10,6 @@ namespace App\Repositories;
 
 
 use App\Collection;
-use App\User;
 
 class CollectionRepository
 {
@@ -38,6 +37,15 @@ class CollectionRepository
         } else{
             return 'error';
         }
+
+    }
+
+    //通过user_id查找
+    public function getByUserId($user_id)
+    {
+        return Collection::with(['shop' => function($query){
+            $query->select('id','name','logo','grade','sale');
+        }])->where('user_id',$user_id)->get();
 
     }
 }

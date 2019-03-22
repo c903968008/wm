@@ -23,9 +23,9 @@ class Shop extends Model
         return $this->belongsToMany(User::class);
     }
 
-    public function collecte()
+    public function collect()
     {
-        return $this->belongsToMany(User::class);
+        return $this->belongsToMany(User::class,'collections','shop_id','user_id');
     }
 
 //    public function evaluations()
