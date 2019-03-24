@@ -45,4 +45,8 @@ Route::post('/getEvaluationWithUser','EvaluationController@getByShopId');
 //coupon接口
 Route::post('/getCouponByUserId','CouponController@getWithShopByUserId');
 
+//foot接口
+Route::post('/addFoot','FootController@create');
+Route::post('/getFootByUserId','FootController@getByUserId');
+
 Route::get('/test','Controller@json2');

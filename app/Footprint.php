@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Foot extends Model
+class Footprint extends Model
 {
     protected $fillable = [
         'user_id', 'shop_id',
