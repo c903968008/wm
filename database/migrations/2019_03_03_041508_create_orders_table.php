@@ -22,7 +22,7 @@ class CreateOrdersTable extends Migration
             $table->integer('state')->unsigned();
             $table->integer('num')->unsigned();
             $table->float('price')->unsigned();
-            $table->string('remark');
+            $table->string('remark')->default('');
             $table->timestamps();
         });
     }

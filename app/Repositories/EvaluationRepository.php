@@ -21,4 +21,10 @@ class EvaluationRepository
         return Evaluation::with('user')->where('shop_id',$shop_id)->get();
     }
 
+    //提交评价
+    public function add($data)
+    {
+        return Evaluation::query()->create($data);
+    }
+
 }

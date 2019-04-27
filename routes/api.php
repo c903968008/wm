@@ -41,6 +41,7 @@ Route::post('/getGood','GoodController@getByShopId');
 
 //evaluation接口
 Route::post('/getEvaluationWithUser','EvaluationController@getByShopId');
+Route::post('/addEvaluation','EvaluationController@add');
 
 //coupon接口
 Route::post('/getCouponByUserId','CouponController@getWithShopByUserId');
@@ -48,5 +49,9 @@ Route::post('/getCouponByUserId','CouponController@getWithShopByUserId');
 //foot接口
 Route::post('/addFoot','FootController@create');
 Route::post('/getFootByUserId','FootController@getByUserId');
+
+//order接口
+Route::post('addOrder','OrderController@create');
+Route::post('/getOrderByUserId','OrderController@getByUserId');
 
 Route::get('/test','Controller@json2');

@@ -8,7 +8,7 @@ class Order extends Model
 {
 
     protected $fillable = [
-        'state', 'num', 'price', 'remark',
+        'user_id', 'shop_id', 'state', 'num', 'price', 'remark'
     ];
 
 
@@ -20,5 +20,15 @@ class Order extends Model
     public function shop()
     {
         return $this->belongsTo(Shop::class);
+    }
+
+    public function goods()
+    {
+        return $this->belongsToMany(Good::class,'order_goods')->withPivot('num');
+    }
+
+    public function goodd()
+    {
+        return $this->belongsToMany(Good::class,'order_goods')->withPivot('num')->using('App\OrderGood');
     }
 }

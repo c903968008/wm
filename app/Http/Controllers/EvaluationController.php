@@ -29,5 +29,21 @@ class EvaluationController extends Controller
         }
     }
 
+    public function add(Request $request)
+    {
+        $data = [
+            'user_id' => $request->get('user_id'),
+            'shop_id' => $request->get('shop_id'),
+            'point' => 3,
+            'content' => $request->get('content'),
+            'photo' => '无'
+        ];
+        $eva = $this->evaluationRepository->add($data);
+        if($eva){
+            return $this->success($eva,"提交评价成功");
+        } else {
+            return $this->fail($eva,"提交评价失败");
+        }
+    }
 
 }

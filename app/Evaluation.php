@@ -8,7 +8,7 @@ class Evaluation extends Model
 {
 
     protected $fillable = [
-        'point', 'content', 'photo',
+        'user_id', 'shop_id', 'point', 'content', 'photo',
     ];
 
 
